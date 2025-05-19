@@ -14,7 +14,9 @@
 
 ### Project Overview
 
-.
+During the COVID-19 lockdown, the entire country was trying to decrease social interactions and people were ordered to stay home in an effort to prevent the spread of the virus...
+
+This is an in-depth analysis on the correlation between the number of traffic collisions and the nuumber of covid cases/deaths in Los Angeles, one of the nations largests cities notorious for its bad traffic.
 
 ### Project Questions
 
