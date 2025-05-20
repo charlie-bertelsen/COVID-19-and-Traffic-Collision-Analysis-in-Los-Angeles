@@ -21,10 +21,26 @@ This is an in-depth analysis on the correlation between the number of traffic co
 ### Project Questions
 
 1. Is there a correlation between the number of COVID-19 deaths/cases and the number of traffic collisions in Los Angeles?
+  
+2. If there is a correlation found between this variables what is the nature of the relationship and what can we learn from it?
+
+3. Which regression model is the most accuracte and can it be used to make future predictions?
 
 ### Data Sources
 
+The data for this project was collected from the data.gov website. There are two .csv files that were exported from the website and then processed and analyzed in R studio.
 
+The first dataset contains information on the number of deaths, cases, new cases and new deaths for both the city of Los Angeles and the State of California.
+2019-2023
+
+
+
+Contains information on the number of deaths, cases, new cases and new deaths for both the city of Los Angeles and the State of California.
+2019-2023
+)
+
+LA County Covid Cases: https://catalog.data.gov/dataset/la-county-covid-cases 
+LA County Covid Cases: https://catalog.data.gov/dataset/la-county-covid-cases
 
 ### Tools
 
