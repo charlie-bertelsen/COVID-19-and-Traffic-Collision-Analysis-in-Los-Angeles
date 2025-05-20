@@ -20,7 +20,7 @@ This is an in-depth analysis on the correlation between the number of traffic co
 
 ### Project Questions
 
-
+1. Is there a correlation between the number of COVID-19 deaths/cases and the number of traffic collisions in Los Angeles?
 
 ### Data Sources
 
