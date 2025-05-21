@@ -71,3 +71,5 @@ LA County Covid Cases: https://catalog.data.gov/dataset/la-county-covid-cases
 
 
 ### Limitations
+
+1. Strong correlation =/= causation - While there is a significant negative correlation between the number of COVID-19 cases/deaths and the number of traffic collisions in Los Angeles, it does not necesarily mean that the pandemic...
