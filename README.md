@@ -3,16 +3,16 @@
 ### Table of Contents
 
   - [Project Overview](#project-overview)
-  - [Data Sources](#Data-Sources)
-  - [Tools](#Tools)
-  - [Data Cleaning and Processing](#Data-Cleaning-and-Processing)
-  - [Exploratory Data Analysis](#Exploratory-Data-Analysis)
-  - [Dashboards and Visualizations](#Dashboards-and-Visualizations)
-  - [Results](#Results)
-  - [Key Findings](#Key-Findings)
-  - [Conclusion](#Conclusion)
-  - [Future Work](#Future-Work)
-  - [Limitations](#Limitations)
+  - [Data Sources](#data-sources)
+  - [Tools](#tools)
+  - [Data Cleaning and Processing](#data-cleaning-and-processing)
+  - [Exploratory Data Analysis](#exploratory-data-analysis)
+  - [Dashboards and Visualizations](#dashboards-and-visualizations)
+  - [Results](#results)
+  - [Key Findings](#key-findings)
+  - [Conclusion](#conclusion)
+  - [Future Work](#future-work)
+  - [Limitations](#limitations)
 
 ### Project Overview
 
@@ -26,9 +26,9 @@ The goal of this project is to identify whether a relationship exists between th
 
 1. Is there a correlation between the number of COVID-19 deaths/cases and the number of traffic collisions in Los Angeles?
   
-2. If there is a correlation found between this variables what is the nature of the relationship and what can we learn from it?
+2. If there is a correlation found between these variables what is the nature of the relationship and what can we learn from it?
 
-3. Which regression model is the most accuracte and can it be used to make future predictions?
+3. Which regression model is the most accurate and can it be used to make future predictions?
 
 ### Data Sources
 
@@ -190,8 +190,8 @@ Through extensive data cleaning, exploratory analysis, and multiple modeling tec
 
 ### Limitations
 
-1. Strong correlation =/= causation: While there is a significant negative relationship between the number of COVID-19 cases/deaths and the number of traffic collisions in Los Angeles, it does not necesarily mean that the pandemic directly caused the decrease in traffic collisions. This was likely a result of a multitute of different factors.
+1. Strong correlation =/= causation: While there is a significant negative relationship between the number of COVID-19 cases/deaths and the number of traffic collisions in Los Angeles, it does not necesarily mean that the pandemic directly caused the decrease in traffic collisions. This was likely a result of a multitude of different factors.
    
 2. The traffic dataset contains only reported collisions: A significant amount of traffic collisions go unreported and the percentage of unreported collisions may have changed during the pandemic pointing to more inaccuracies in the data.
 
-3. Due to account access issues with Posit Cloud, the original R code and Shiny app are no longer available. However, the analysis and results are preserved in the final presentation and EDA documentation.
+3. Due to account access issues with Posit Cloud, the original R code and Shiny app is no longer available. However, the analysis and results are preserved in the final presentation and EDA documentation.
