@@ -50,11 +50,43 @@ https://catalog.data.gov/dataset/traffic-collision-data-from-2010-to-present
   
 ### Data Cleaning and Processing
 
+- Column Removal: Unnecessary columns were removed from both datasets to streamline the analysis. Examples include geographic markers (e.g., county, state), administrative codes, and unused fields (e.g., test counts, lat/long).
+
+- Handling Missing Values: The only column with missing data was Victim.Age in the traffic dataset, which wasn’t essential to the correlation analysis. No rows were removed due to missing key variables like date or collision count.
+
+- Date Formatting and Sorting: Dates were converted using as.Date() and sorted chronologically using order() to ensure time-based alignment.
+
+- Deduplication: Duplicate rows were removed using the distinct() function in R.
+
+- Column Renaming and Data Joining: The traffic dataset’s date column (Date.Occurred) was renamed to date to match the COVID-19 dataset. A full join was performed using full_join() to preserve pre-pandemic traffic data (2010–2019) and pandemic-era data (2020–2023).
 
 
 ### Exploratory Data Analysis
 
+A full exploratory data analysis report is available in the EDA folder. Below is a summary of the EDA process:
 
+✅ Univariate Analysis
+
+- COVID-19 Case Variation: A wide range of daily new cases, with significant spikes and data irregularities early in the pandemic.
+- Collision Victim Age: A near-normal distribution, with peaks in the early-to-late 20s, indicating younger drivers are more frequently involved.
+- Gender Distribution: Male victims were significantly more common in reported collisions.
+
+✅ Bivariate Analysis
+
+- COVID Deaths vs. Cases: Strong linear correlation, validating data quality and pandemic progression.
+- Traffic Collisions Over Time: Clear visual dip in daily collisions starting in early 2020, aligning with stay-at-home mandates.
+- COVID Cases vs. Collisions: Apparent inverse relationship — as cases increased, traffic collisions decreased.
+
+✅ High-Dimensional Analysis
+
+- Scatterplot Matrix: Strong correlations between deaths, total cases, and new cases. Weak correlations between new deaths and new cases suggest reporting inconsistency.
+- 3D Scatterplot (Cases, Deaths, Collisions): Revealed clusters likely corresponding to pandemic phases. Notable transition from high-collision, low-case areas to high-case, low-collision periods.
+
+✅ Advanced Techniques Used
+
+- Outlier Detection: Boxplots identified valid extreme values, confirming no extreme data entries.
+- Multiple Linear Regression: Statistically significant model (p < 0.05 for both cases and deaths), with an R² of 0.736, indicating that ~74% of variation in collision counts can be explained by COVID case and death trends.
+- K-means Clustering: Identified three natural groupings of data, representing different stages of the pandemic with distinct traffic-collision behavior.
 
 ### Visualizations
 
@@ -74,3 +106,5 @@ https://catalog.data.gov/dataset/traffic-collision-data-from-2010-to-present
 1. Strong correlation =/= causation: While there is a significant negative correlation between the number of COVID-19 cases/deaths and the number of traffic collisions in Los Angeles, it does not necesarily mean that the pandemic...
    
 2. The traffic dataset contains only reported collisions: A significant amount of traffic collisions go unreported and the percentage of unreported collisions may have changed during the pandemic pointing to more inaccuracies in the data.
+
+3. Due to account access issues with Posit Cloud, the original R code and Shiny app are no longer available. However, the analysis and results are preserved in the final presentation and EDA documentation.
