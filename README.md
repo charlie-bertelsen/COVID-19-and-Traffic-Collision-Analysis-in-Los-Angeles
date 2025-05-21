@@ -168,7 +168,7 @@ This model again confirmed a strong and negative correlation between the princip
 
 - Clustering and PCA confirmed distinct pandemic phases with differing traffic behaviors.
 
- -Regression models suggest pandemic restrictions had a measurable impact on road safety.
+ - Regression models suggest pandemic restrictions had a measurable impact on road safety.
 
 ### Conclusion
 
