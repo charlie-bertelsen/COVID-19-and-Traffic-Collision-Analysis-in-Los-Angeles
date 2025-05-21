@@ -44,6 +44,9 @@ LA County Covid Cases: https://catalog.data.gov/dataset/la-county-covid-cases
 
 ### Tools
 
+![Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
+![RStudio](https://img.shields.io/badge/RStudio-75AADB?style=for-the-badge&logo=rstudio&logoColor=white)
+![Shiny](https://img.shields.io/badge/Shiny-R%20Framework-006cab?style=for-the-badge&logo=r&logoColor=white)
 
   
 ### Data Cleaning and Processing
