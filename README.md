@@ -35,8 +35,7 @@ The first dataset contains information on the number of deaths, cases, new cases
 
 
 
-Contains information on the number of deaths, cases, new cases and new deaths for both the city of Los Angeles and the State of California.
-2019-2023
+The second dataset contains information on different crimes reported in Los Angeles
 )
 
 LA County Covid Cases: https://catalog.data.gov/dataset/la-county-covid-cases 
@@ -68,8 +67,10 @@ LA County Covid Cases: https://catalog.data.gov/dataset/la-county-covid-cases
 
 ### Future Work
 
-
+1. Geographical Analysis:
 
 ### Limitations
 
-1. Strong correlation =/= causation - While there is a significant negative correlation between the number of COVID-19 cases/deaths and the number of traffic collisions in Los Angeles, it does not necesarily mean that the pandemic...
+1. Strong correlation =/= causation: While there is a significant negative correlation between the number of COVID-19 cases/deaths and the number of traffic collisions in Los Angeles, it does not necesarily mean that the pandemic...
+   
+2. The traffic dataset contains only reported collisions: A significant amount of traffic collisions go unreported and the percentage of unreported collisions may have changed during the pandemic pointing to more inaccuracies in the data.
