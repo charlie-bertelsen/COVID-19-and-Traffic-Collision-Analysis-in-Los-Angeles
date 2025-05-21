@@ -14,9 +14,11 @@
 
 ### Project Overview
 
-During the COVID-19 lockdown, the entire country was trying to decrease social interactions and people were ordered to stay home in an effort to prevent the spread of the virus...
+As COVID-19 cases surged and strict stay-at-home orders were implemented, many businesses transitioned to remote work, schools closed, and non-essential travel was discouraged or prohibited altogether. These changes led to a significant decrease in the number of vehicles on the road.
 
-This is an in-depth analysis on the correlation between the number of traffic collisions and the nuumber of covid cases/deaths in Los Angeles, one of the nations largests cities notorious for its bad traffic.
+This project presents an in-depth analysis of the correlation between traffic collisions and the number of COVID-19 cases and deaths in Los Angeles, California, one of the largest cities in the U.S. and notorious for bad traffic.
+
+The goal of this project is to identify whether a relationship exists between the number of COVID-19 cases and deaths and traffic collisions in Los Angeles. By examining trends during the pandemic, this analysis aims to discover how public health measures and behavioral shifts may have influenced road safety in a large urban environment.
 
 ### Project Questions
 
@@ -28,18 +30,16 @@ This is an in-depth analysis on the correlation between the number of traffic co
 
 ### Data Sources
 
-The data for this project was collected from the data.gov website. There are two .csv files that were exported from the website and then processed and analyzed in R studio.
+The data for this project was collected from the data.gov website. There are two .csv files that were exported from the website and then processed and analyzed in R studio:
 
-The first dataset contains information on the number of deaths, cases, new cases and new deaths for both the city of Los Angeles and the State of California.
+1. The first dataset contains information on the number of deaths, cases, new cases and new deaths for both the city of Los Angeles and the State of California.
 2019-2023
 
-
-
-The second dataset contains information on different crimes reported in Los Angeles
-)
-
-LA County Covid Cases: https://catalog.data.gov/dataset/la-county-covid-cases 
 LA County Covid Cases: https://catalog.data.gov/dataset/la-county-covid-cases
+
+2. The second dataset contains information on traffic collisions reported in Los Angeles. This dataset includes the date and time of the collision, the geographical information of the incident and the victim demographics.
+ 
+https://catalog.data.gov/dataset/traffic-collision-data-from-2010-to-present
 
 ### Tools
 
