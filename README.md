@@ -9,6 +9,7 @@
   - [Exploratory Data Analysis](#Exploratory-Data-Analysis)
   - [Dashboards and Visualizations](#Dashboards-and-Visualizations)
   - [Results](#Results)
+  - [Key Findings](#Key-Findings)
   - [Conclusion](#Conclusion)
   - [Future Work](#Future-Work)
   - [Limitations](#Limitations)
@@ -72,16 +73,25 @@ A full exploratory data analysis report is available in the EDA folder. Below is
 - Collision Victim Age: A near-normal distribution, with peaks in the early-to-late 20s, indicating younger drivers are more frequently involved.
 - Gender Distribution: Male victims were significantly more common in reported collisions.
 
+![image](https://github.com/user-attachments/assets/fc232083-7dff-4781-9928-08eb2de6b999)
+
+
 ✅ Bivariate Analysis
 
 - COVID Deaths vs. Cases: Strong linear correlation, validating data quality and pandemic progression.
 - Traffic Collisions Over Time: Clear visual dip in daily collisions starting in early 2020, aligning with stay-at-home mandates.
 - COVID Cases vs. Collisions: Apparent inverse relationship — as cases increased, traffic collisions decreased.
 
+![image](https://github.com/user-attachments/assets/1e137609-17fb-4f13-9dd1-7371089c7e6a)
+
+
 ✅ High-Dimensional Analysis
 
 - Scatterplot Matrix: Strong correlations between deaths, total cases, and new cases. Weak correlations between new deaths and new cases suggest reporting inconsistency.
 - 3D Scatterplot (Cases, Deaths, Collisions): Revealed clusters likely corresponding to pandemic phases. Notable transition from high-collision, low-case areas to high-case, low-collision periods.
+
+![image](https://github.com/user-attachments/assets/490a9d0f-f5d9-4cae-b6c7-b22b63ff114d)
+
 
 ✅ Advanced Techniques Used
 
@@ -90,6 +100,8 @@ A full exploratory data analysis report is available in the EDA folder. Below is
 - K-means Clustering: Identified three natural groupings of data, representing different stages of the pandemic with distinct traffic-collision behavior.
 
 ### Visualizations
+
+A summary of the most accurately fitting model (polynomial) and screenshot preview are below. A full report of the models built in this project can be found in the main branch as the model building part 2 file.
 
 Polynomial Regression (6 degree):
 
@@ -112,41 +124,51 @@ between traffic collisions and cases/deaths. When traffic collisions were high c
 
 The analysis revealed a strong and statistically significant relationship between the number of COVID-19 cases/deaths and the number of traffic collisions in Los Angeles. Multiple modeling techniques were used to evaluate the nature of this relationship:
 
-1. Linear Regression
-Linear regression models were first applied using total COVID-19 cases and deaths as predictors of total traffic collisions. Both models returned extremely low p-values (p < 2.2e-16), indicating a statistically significant relationship:
+##### Linear Regression
 
-Cases model R² = 0.498
+- Linear regression models were first applied using total COVID-19 cases and deaths as predictors of total traffic collisions. Both models returned extremely low p-values (p < 2.2e-16), indicating a statistically significant relationship:
 
-Deaths model R² = 0.703
+- Cases model R² = 0.498
+
+- Deaths model R² = 0.703
 
 While statistically significant, the linear trend did not visually capture the non-linear nature of the data distribution, indicating the need for more flexible models.
 
-2. Polynomial Regression
-Polynomial regression models (degree = 6) provided a far better fit:
+##### Polynomial Regression
 
-Cases model R² = 0.865
+- Polynomial regression models (degree = 6) provided a far better fit:
 
-Deaths model R² = 0.877
+- Cases model R² = 0.865
+
+- Deaths model R² = 0.877
 
 These models captured the curvature present in the data and revealed a clear inverse relationship: as COVID-19 cases and deaths increased, the number of daily traffic collisions decreased. The improvement in model fit confirms that the relationship between these variables is non-linear and more complex than what a simple linear regression can express.
 
-3. Negative Binomial Regression
-Given that the dependent variable (collision counts) is discrete and showed overdispersion, a negative binomial model was implemented. This model confirmed the significance of both predictors:
+##### Negative Binomial Regression
+   
+Given that the dependent variable (collision counts) is discrete and showed overdispersion, a negative binomial model was implemented. This model confirmed the significance of a positive relationship between COVID cases and collisions and a stronger negative relationship between COVID deaths and collisions. Although the model identified significant predictors, visual inspection suggested it still struggled to accurately fit the data, similar to linear models, but it performed better than a Poisson model previously used.
 
-Positive relationship between COVID cases and collisions
+##### Principal Component Regression
 
-Stronger negative relationship between COVID deaths and collisions
+- Due to multicollinearity concerns between COVID case and death counts (confirmed by high VIF scores), PCA was employed. The first principal component explained over 96% of the variance, allowing it to be used as the sole predictor in a linear model:
 
-Although the model identified significant predictors, visual inspection suggested it still struggled to accurately fit the data, similar to linear models, but it performed better than a Poisson model previously used.
+- Principal Component Model R² = 0.701
 
-4. Principal Component Regression
-Due to multicollinearity concerns between COVID case and death counts (confirmed by high VIF scores), PCA was employed. The first principal component explained over 96% of the variance, allowing it to be used as the sole predictor in a linear model:
-
-Principal Component Model R² = 0.701
-
-P-value < 2.2e-16
+- P-value < 2.2e-16
 
 This model again confirmed a strong and negative correlation between the principal component (a combined measure of cases and deaths) and the number of traffic collisions.
+
+### Key Findings
+
+- Traffic collisions in LA dropped significantly during periods of COVID-19 case/death surges.
+
+- Polynomial regression models provided the most accurate fit, with R² > 0.86.
+
+- COVID deaths were more strongly negatively correlated with traffic collisions than COVID cases.
+
+- Clustering and PCA confirmed distinct pandemic phases with differing traffic behaviors.
+
+ -Regression models suggest pandemic restrictions had a measurable impact on road safety.
 
 ### Conclusion
 
@@ -156,11 +178,19 @@ Through extensive data cleaning, exploratory analysis, and multiple modeling tec
 
 ### Future Work
 
-1. Geographical Analysis:
+1. Geographical Analysis: Breaking the analysis down by ZIP code or location could uncover disparities in how different areas were affected during the pandemic.
+ 
+2. Daily New Case Data - Incorporating accurate daily new case and death data could provide a more granular view of how short-term COVID-19 trends influenced driving behavior and collision rates.
+
+3. Time Series and Lag Analysis - Future models could explore lagged relationships between rising case numbers and subsequent changes in collision rates. This would help identify behavioral response times and better understand causality.
+
+4. Comparative City Analysis - Expanding the analysis to other major cities like New York, Chicago, or San Francisco could reveal whether this trend was unique to Los Angeles or part of a broader national pattern.
+
+5. Post-Pandemic Trends - As traffic patterns continue to normalize, comparing post-pandemic data with the peak COVID-19 period could shed light on which behavioral changes were temporary and which may have had lasting effects on urban mobility and safety.
 
 ### Limitations
 
-1. Strong correlation =/= causation: While there is a significant negative correlation between the number of COVID-19 cases/deaths and the number of traffic collisions in Los Angeles, it does not necesarily mean that the pandemic...
+1. Strong correlation =/= causation: While there is a significant negative relationship between the number of COVID-19 cases/deaths and the number of traffic collisions in Los Angeles, it does not necesarily mean that the pandemic directly caused the decrease in traffic collisions. This was likely a result of a multitute of different factors.
    
 2. The traffic dataset contains only reported collisions: A significant amount of traffic collisions go unreported and the percentage of unreported collisions may have changed during the pandemic pointing to more inaccuracies in the data.
 
